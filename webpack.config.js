@@ -73,7 +73,7 @@ const serverConfig = {
         test: /\.css$/,
         use: [
           {
-            loader: "css-loader/locals"
+            loader: "css-loader"
           }
         ]
       },
