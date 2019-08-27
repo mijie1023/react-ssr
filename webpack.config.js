@@ -9,6 +9,10 @@ const browserConfig = {
     filename: "./public/bundle.js"
   },
   devtool: "cheap-module-source-map",
+  resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: [".js", ".jsx", ".ts", ".tsx"]
+  },
   module: {
     rules: [
       {
@@ -39,6 +43,21 @@ const browserConfig = {
         exclude: /(node_modules)/,
         loader: "babel-loader",
         query: { presets: ["@babel/preset-env", "@babel/preset-react"] }
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "ts-loader"
+            }
+        ]
+      },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   },
@@ -58,6 +77,10 @@ const serverConfig = {
     libraryTarget: "commonjs2"
   },
   devtool: "cheap-module-source-map",
+  resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: [".js", ".jsx", ".ts", ".tsx"]
+  },
   module: {
     rules: [
       {
@@ -82,6 +105,21 @@ const serverConfig = {
         exclude: /(node_modules)/,
         loader: "babel-loader",
         query: { presets: ["@babel/preset-env", "@babel/preset-react"] }
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "ts-loader"
+            }
+        ]
+      },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   }

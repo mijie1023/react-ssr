@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-
+import Message from './Message';
+import * as React from "react";
 import "./App.css";
 
-class App extends Component {
+export interface AppProps {message: string};
+
+class App extends React.Component<AppProps, {}> {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h2>Welcome to React in the Server!</h2>
+          <Message message={this.props.message}/>
           <button onClick={() => {console.error('trigger click.')}}>click</button>
         </div>
         <p className="App-intro">Isn't this cool!!!!</p>
@@ -16,4 +17,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

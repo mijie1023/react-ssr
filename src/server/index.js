@@ -1,6 +1,6 @@
 import express from "express";
 import React from "react";
-import { renderToNodeStream  } from "react-dom/server";
+import {renderToNodeStream} from "react-dom/server";
 import App from "../shared/App";
 
 const app = express();
@@ -16,12 +16,12 @@ app.get("*", (req, res) => {
         <script src="/bundle.js" defer></script>
       </head>
       <body>
-        <div id="root">${renderToNodeStream(<App />)}</div>
+        <div id="root">${renderToNodeStream(<App message="Server"/>)}</div>
       </body>
     </html>
   `);
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is listening");
+  console.log("Server is listening on port 3000!");
 });
