@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 
@@ -11,7 +12,10 @@ const browserConfig = {
   devtool: "cheap-module-source-map",
   resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
-      extensions: [".js", ".jsx", ".ts", ".tsx"]
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+      alias: {
+          'root': path.resolve(__dirname, 'src/'),
+      }
   },
   module: {
     rules: [
@@ -37,6 +41,12 @@ const browserConfig = {
           },
           'css-loader',
         ],
+      },
+      {
+        enforce: 'pre',
+        test: /\.[j|t]s(x?)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
       },
       {
         test: /js$/,
@@ -79,7 +89,10 @@ const serverConfig = {
   devtool: "cheap-module-source-map",
   resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
-      extensions: [".js", ".jsx", ".ts", ".tsx"]
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+      alias: {
+          'root': path.resolve(__dirname, 'src/'),
+      }
   },
   module: {
     rules: [
@@ -101,8 +114,14 @@ const serverConfig = {
         ]
       },
       {
+        enforce: 'pre',
+        test: /\.[j|t]s(x?)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
         test: /js$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         loader: "babel-loader",
         query: { presets: ["@babel/preset-env", "@babel/preset-react"] }
       },

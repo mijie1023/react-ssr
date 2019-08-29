@@ -1,4 +1,4 @@
-import Message from './Message';
+import Message from 'root/shared/Message';
 import * as React from "react";
 import "./App.css";
 
