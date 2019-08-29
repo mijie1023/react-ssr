@@ -5,14 +5,14 @@ import "./App.css";
 export interface AppProps {message: string};
 
 class App extends React.Component<AppProps, {}> {
-  render() {
+  render(): React.ReactNode {
     return (
       <div className="App">
         <div className="App-header">
           <Message message={this.props.message}/>
-          <button onClick={() => {console.error('trigger click.')}}>click</button>
+          <button onClick={() => {console.error("trigger click.")}}>click</button>
         </div>
-        <p className="App-intro">Isn't this cool!!!!</p>
+        <p className="App-intro">Is not this cool!!!!</p>
       </div>
     );
   }
