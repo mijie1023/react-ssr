@@ -10,7 +10,7 @@ class App extends React.Component<AppProps, {}> {
       <div className="App">
         <div className="App-header">
           <Message message={this.props.message}/>
-          <button onClick={() => {console.error("trigger click.")}}>click</button>
+          <button onClick={(): void => {console.error("trigger click.")}}>click</button>
         </div>
         <p className="App-intro">Is not this cool!!!!</p>
       </div>

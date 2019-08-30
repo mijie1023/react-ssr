@@ -1,12 +1,23 @@
 {
    "parser": "@typescript-eslint/parser",
-   "plugins": ["@typescript-eslint"],
-   "extends": ["plugin:@typescript-eslint/recommended"],
-   "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-         "jsx": true
-      }
+   "plugins": ["react", "@typescript-eslint"],
+   "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+   ],
+   "globals":{
+      "console": false,
+      "document": false
+   },
+   "rules": {
+      "no-extra-semi": "off" // disable rule
    }
 }
+
+// need npm package
+// "eslint": "^6.2.2",
+// "eslint-loader": "^3.0.0",
+// "eslint-plugin-react": "^7.14.3",
+// "@typescript-eslint/eslint-plugin": "^2.0.0",
+// "@typescript-eslint/parser": "^2.0.0",
