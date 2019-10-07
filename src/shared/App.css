@@ -1,11 +1,19 @@
-body {
+html {
+  height: 100%;
+}
+
+body, #root {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100%;
 }
 
 .App {
   text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -22,6 +30,17 @@ body {
 
 .App-intro {
   font-size: large;
+}
+
+.App-pane {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App-pane span {
+  width: 60px;
+  height: 24px;
 }
 
 @keyframes App-logo-spin {

@@ -18,23 +18,27 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@types/node": "^12.7.11",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
+    "canvas": "^2.6.0",
     "css-loader": "^3.2.0",
     "eslint": "^6.2.2",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "node-loader": "^0.6.0",
     "postcss-loader": "^3.0.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
   }
 }

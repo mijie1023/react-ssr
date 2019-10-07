@@ -63,6 +63,10 @@ const browserConfig = {
             }
         ]
       },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
+      },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {
         enforce: "pre",
@@ -126,6 +130,10 @@ const serverConfig = {
         query: { presets: ["@babel/preset-env", "@babel/preset-react"] }
       },
       {
+        test: /\.node$/,
+        use: 'node-loader'
+      },
+      {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [
@@ -144,5 +152,5 @@ const serverConfig = {
   }
 };
 
-// module.exports = [browserConfig, serverConfig];
-module.exports = [browserConfig];
+module.exports = [browserConfig, serverConfig];
+// module.exports = [browserConfig];
